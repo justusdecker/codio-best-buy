@@ -96,7 +96,7 @@ class Product:
         return self.active
 
     def show(self) -> str:
-        return f"{self.name:<15}{self.price:<6}{self.quantity:<15}" # titles like name, price & quanity will be printed in the main function! Looks better!
+        return f"{self.name:<25}{self.price:<6}{self.quantity:<15}" # titles like name, price & quanity will be printed in the main function! Looks better!
     
     def buy(self,quantity: int) -> float | int:
         if not isinstance(quantity,int):
