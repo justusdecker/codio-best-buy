@@ -62,9 +62,11 @@ class Product:
             raise ValueError(f"Price can't be below Zero!")
 
     def get_quantity(self) -> int | float:
+        """ Get the quantity of the product """
         return self.quantity
     
     def set_quantity(self,value: int) -> None:
+        """ Set the quantity of the product """
         self._check_quantity(value)
         self.quantity = value
 
@@ -87,18 +89,27 @@ class Product:
         self.name = value
 
     def activate(self) -> None:
+        """ Set the status: active of the product to ``True`` """
         self.active = True
     
     def deactivate(self) -> None:
+        """ Set the status: active of the product ``False`` """
         self.active = False
 
     def is_active(self) -> bool:
+        """ Get the status: active of the product """
         return self.active
 
     def show(self) -> str:
+        """ Get a formatted string """
         return f"{self.name:<30} {self.price:<6} {self.quantity:<15}" # titles like name, price & quanity will be printed in the main function! Looks better!
     
     def buy(self,quantity: int) -> float | int:
+        """
+        - Set quantity
+        - Get the price
+        Raises an Exception if type is incorrect or quantity is below 0
+        """
         if not isinstance(quantity,int):
             raise TypeError("Quantity is not an integer!")
         if quantity < 0:
