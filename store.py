@@ -7,7 +7,7 @@ class Store:
         self.products = [
             Product("Bose QuietComfort Earbuds", price=250, quantity=500),
             Product("MacBook Air M2", price=1450, quantity=100),
-            Product("A Big Tasty Bacon🍔", price=250, quantity=500)] #I'm hungry 🤤
+            Product("A Big Tasty Bacon", price=250, quantity=500)] #I'm hungry 🤤
     def remove_product(self,product: Product):
         self.products.remove(product)
     def get_total_quantity(self) -> int:
