@@ -24,7 +24,37 @@ def main():
                 print(STORE.get_total_quantity())
                 input('ENTER to continue!')
             case "3":
-                pass
+                print('-'*6)
+                print(f"#   {'Name':<30} {'Price':<6} {'Quantity':<15}")
+                for index,prod in enumerate(STORE.products):
+                    print(f'#{index+1:<2} {prod.show()}')
+                print('-'*6)
+                print("When you want to finish order, enter empty text.")
+                ordering_input = 'NOTEMPTY'
+                quantity_input = 'NOTEMPTY'
+                shopping_cart = []
+                while ordering_input and quantity_input:
+                    ordering_input = input("Which product # do you want? ")
+                    
+                    if not ordering_input: break
+                    if not ordering_input.isdecimal(): 
+                        print('Something went wrong please try again!')
+                        continue
+                    
+                    quantity_input = input("What amount do you want? ")
+                    
+                    if not quantity_input: break
+                    if not quantity_input.isdecimal(): 
+                        print('Something went wrong please try again!')
+                        continue
+                    
+
+                    if int(ordering_input) - 1 < len(STORE.products):
+                        shopping_cart.append((STORE.products[int(ordering_input) - 1],int(quantity_input)))
+                        print("Product added to list!")
+                    else:
+                        print('This Product doesn\'t exist!')
+
             case "4":
                 is_running = False
 
