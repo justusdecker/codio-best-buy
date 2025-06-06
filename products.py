@@ -1,5 +1,3 @@
-
-
 class Product:
     """
     A product will have:
@@ -109,14 +107,3 @@ class Product:
             quantity = self.quantity
         self.quantity -= quantity
         return quantity * self.price
-
-class WareHouse:
-    """
-    A Class that will manage Products
-    """
-    
-    BOSE = Product("Bose QuietComfort Earbuds", price=250, quantity=500)
-    MAC = Product("MacBook Air M2", price=1450, quantity=100)
-    BIG_TASTY_BACON = Product("A Big Tasty Bacon🍔", price=250, quantity=500) #I'm hungry 🤤
-
-WAREHOUSE = WareHouse()
