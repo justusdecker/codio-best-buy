@@ -65,7 +65,7 @@ class Product:
         return self.quantity
     
     def set_quantity(self,value: int) -> None:
-        self._check_quantity()
+        self._check_quantity(value)
         self.quantity = value
 
     def get_price(self) -> int | float:
@@ -74,7 +74,7 @@ class Product:
     
     def set_price(self,value: int | float) -> None:
         """ Set the price of the product """
-        self._check_price()
+        self._check_price(value)
         self.price = value
     
     def get_name(self) -> str:
@@ -83,7 +83,7 @@ class Product:
     
     def set_name(self,value: str) -> None:
         """ Set the name of the product """
-        self._check_name()
+        self._check_name(value)
         self.name = value
 
     def activate(self) -> None:
