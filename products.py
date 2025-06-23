@@ -29,7 +29,7 @@ class Product:
             raise TypeError(f"{value} is not a string!")
         # Valuecheck: name
         if not value:
-            ValueError("Name cannot be empty!")
+            raise ValueError("Name cannot be empty!")
     def _check_price(self,value: float | int) -> None:
         """
         Will check for edge cases before ``price`` will be set
