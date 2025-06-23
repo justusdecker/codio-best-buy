@@ -15,15 +15,15 @@ def main():
         print(MENU)
         user_input = input('Please choose a number: ')
         match user_input:
-            case "1":
+            case "1": # print a table of products in store
                 print(f"{'Name':<30} {'Price':<6} {'Quantity':<15}")
                 for prod in STORE.products:
                     print(prod.show())
                 input('ENTER to continue!')
-            case "2":
+            case "2": # get total quantity of all products in store
                 print(STORE.get_total_quantity())
                 input('ENTER to continue!')
-            case "3":
+            case "3": # ordering
                 print('-'*6)
                 print(f"#   {'Name':<30} {'Price':<6} {'Quantity':<15}")
                 for index,prod in enumerate(STORE.products):
@@ -54,8 +54,11 @@ def main():
                         print("Product added to list!")
                     else:
                         print('This Product doesn\'t exist!')
+                for product in shopping_cart:
+                    product[0].buy(product[1])
+                    print(f'Ordered: {product[1]} of {product[0].name}')
 
-            case "4":
+            case "4": # exit
                 is_running = False
 
 if __name__ == '__main__':
