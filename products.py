@@ -59,7 +59,7 @@ class Product:
             raise TypeError(f"{value} is not an integer!")
         # Valuecheck: quantity
         if value < 0:
-            raise ValueError(f"Price can't be below Zero!")
+            raise ValueError(f"Quantity can't be below Zero!")
 
     def get_quantity(self) -> int | float:
         """ Get the quantity of the product """
