@@ -115,6 +115,6 @@ class Product:
         if quantity < 0:
             raise ValueError("Quantity cannot below 0")
         if quantity > self.quantity: # caps at maximum quantity. No exception needed!
-            quantity = self.quantity
+            raise ValueError(f'{self.name} Out of stock!')
         self.quantity -= quantity
         return quantity * self.price
