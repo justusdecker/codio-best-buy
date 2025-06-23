@@ -14,9 +14,10 @@ class Store:
     def get_total_quantity(self) -> int:
         """ Get all products quantity """
         return sum([i.get_quantity() for i in self.products])
-    def get_all_products(self) -> int:
+
+    def get_all_products(self) -> list:
         """ Get all active products """
-        return sum([i.is_active() for i in self.products])
+        return [i for i in self.products]
     def order(self, product: tuple[Product, int]):
         """ Take an order by calling for each element in product the buy method of a Product Instance! """
         return sum([prod.buy(quan) for prod, quan in product])
