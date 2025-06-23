@@ -14,7 +14,7 @@ class Product:
         self.set_name(name)
         self.set_price(price)
         self.set_quantity(quantity)
-        self.active : bool = False
+        self.active : bool = True
     def _check_name(self,value: str) -> None:
         """
         Will check for edge cases before ``name`` will be set
